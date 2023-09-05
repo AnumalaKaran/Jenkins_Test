@@ -1,9 +1,9 @@
 pipeline {
   agent any
-//parameters {
-//choice(name: 'version', choices: ['1.1.0', '1.1.1', '1.1.2'], description: '')
-//booleanParam(name: 'executeTest', defaultValue: true, description: '')
-//}
+parameters {
+choice(name: 'version', choices: ['1.1.0', '1.1.1', '1.1.2'], description: '')
+booleanParam(name: 'executeTest', defaultValue: true, description: '')
+}
   stages {
     stage("init") {
       steps {
@@ -20,14 +20,15 @@ pipeline {
             }
 }
   stage("test") {
-   //when {
-     //   expression{
-      //      params.executeTest()
-      //  }
-   // }
+   when {
+        expression{
+            params.executeTest()
+        }
+    }
     steps {
       script{
         gv.testApp()
+        echo "deploying version ${params.version}"
       }
     }
 }
