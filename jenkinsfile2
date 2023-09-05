@@ -1,9 +1,9 @@
 pipeline {
   agent any
-parameters {
+//parameters {
 //choice(name: 'version', choices: ['1.1.0', '1.1.1', '1.1.2'], description: '')
 //booleanParam(name: 'executeTest', defaultValue: true, description: '')
-}
+//}
   stages {
     stage("init") {
       steps {
