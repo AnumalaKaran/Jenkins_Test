@@ -7,7 +7,6 @@ choice(name: 'version', choices: ['1.1.0', '1.1.1', '1.1.2'], description: '')
 booleanParam(name: 'executeTest', defaultValue: true, description: '')
 }
 stages {
-stages {
     stage('Test') {
       steps {
         sh 'node --version'
@@ -35,5 +34,4 @@ echo "deploying the app"
 echo "deploying version ${params.version}"
     }
   }
-}
 }
