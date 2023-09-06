@@ -12,7 +12,6 @@ stages {
         sh 'node --version'
       }
     }
-  }
 stage("build") {
 steps {
 echo "building the app"
@@ -34,4 +33,5 @@ echo "deploying the app"
 echo "deploying version ${params.version}"
     }
   }
+}
 }
